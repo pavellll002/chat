@@ -33,7 +33,7 @@ Chaters.remove({},function(err, result){
 //clean files
 clean.files = ()=>{
     let path  = './static/uploads/photo'
-    //crate place for saving photos temp
+/*    //crate place for saving photos temp
     fs.access(path,(err)=>{
         if(err) fs.mkdirSync(path)
     })
@@ -44,7 +44,7 @@ clean.files = ()=>{
     fs.access(realPath,(err)=>{
         if(err) fs.mkdirSync(realPath)
     })
-    
+    */
 	let files = getFiles(path)//get all files
 	//delete them
 	for(file of files){
