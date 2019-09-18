@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Коллекция</title>
+	<link rel="stylesheet" type="text/css" href="/ccs/gallery.css"/>
+
+	<%-include('layout/head')-%>
+
+</head>
+<body data-ui = "" >
+	<div id="wrapper container" style = 'height:100vh'>
+			<%- include('layout/header')-%>
+	<div class="main row no-gutters" style="min-height: 93vh">
+		<nav class="col-md-2">
+			<%- include('layout/nav')-%>
+		</nav>
+		
+		<div class=" col-md-8 d-flex flex-column " style="height: 100%">
+		<div id="gallery">
+			
+			<div class="clear"></div>
+		</div>
+		</div>
+
+		<aside class="col-md-2"></aside>
+	</div>
+	</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+	<script type="text/javascript" src="/js/libs_js/jquery.imagesGrid.js"></script>
+	<script type="text/javascript" src="/js/lightbox.min.js"></script>
+	<script type="text/javascript" src="/js/libs_js/spotlight.bundle.js" defer></script>
+	<script type="text/javascript" src="/js/nav.js"></script>
+	<script type="text/javascript" src="/js/gallery.js" defer></script>
+</body>
+</html>

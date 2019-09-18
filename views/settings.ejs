@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Настройки</title>
+	<link rel="stylesheet" type="text/css" href="/ccs/settings.css"/>
+	<%-include('layout/head')-%>
+
+</head>
+<body data-ui = "" >
+	<div id="wrapper container" style = 'height:100vh'>
+			<%- include('layout/header')-%>
+	<div class="main row no-gutters" style="min-height: 93vh">
+		<nav class="col-md-2">
+			<%- include('layout/nav')-%>
+		</nav>
+		
+		<div class=" col-md-8 d-flex flex-column " style="height: 100%">
+
+		<div class="changeLogin">
+						<h2>Изменить логин</h2>
+						<br>
+						<input type="text" name="username" id="" placeholder="Текущий логин">
+						<br><br>
+						<input type="text" name="newUsername" id="" placeholder="Новый логин">
+						<br><br>
+						<input type="password" name="password" id="" placeholder="Пароль">
+						<br><br>
+						<button id="changeLogin">Изменить</button>
+						<br><br>
+						<hr>	
+		</div>
+
+		
+
+		<div class="changePas">
+						<h2>Изменить пароль</h2>
+						<br>
+						<input type="password" name="lastPassword" id="" placeholder="Текущий пароль">
+						<br><br>
+						<input type="password" name="newPassword" id="" placeholder="Новый пароль">
+						<br><br>
+						<button id="changePas">Изменить</button>
+						<br><br>
+						<hr>	
+		</div>
+		
+		</div>
+
+		<aside class="col-md-2"></aside>
+
+		<div class="pop-up-wrapper">
+			
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript" src="/js/libs_js/pop-up-chat.js"></script>
+	<script type="text/javascript" src="/js/nav.js"></script>
+	<script type="text/javascript" src="/js/settings.js"></script>
+</body>
+</html>

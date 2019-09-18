@@ -1,0 +1,39 @@
+.changeLogin{
+    margin-top: 1em;	
+}
+.changeLogin,.changePas{
+    border: 1px solid #408fb4;
+    padding: 1.5em;
+    margin-bottom: 2.5em;
+    border-radius: 1em;
+}
+
+input{
+    outline: none;
+    border: 1px solid #408fb4;
+    padding: .4em;
+    color: #408fb4;
+    border-radius: .5em;
+    max-width: 100%;
+}
+
+button {
+    color: white;
+    border: 1px solid #408fb4;
+    background: #408fb4 !important;
+    padding: .2em 2em;
+    border-radius: .3em !important;
+}
+h2{
+    font-family: 'Kanit', sans-serif !important;
+    color: #323e53 !important;
+}
+
+nav a {
+    color: #408fb4 !important;
+    font-family: 'Kanit', sans-serif !important;
+    margin-bottom: .2em !important;
+}
+nav a:hover{
+    text-decoration: none !important;	
+}

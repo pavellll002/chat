@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Авторизация | Регестрация</title>
+	<link rel="stylesheet" type="text/css" href="/ccs/stelessignup.css"/>
+	<link rel="stylesheet" type="text/css" href="/ccs/main-style.css"/>
+	<%-include('layout/head')-%>
+</head>
+<body>
+	<div id="wrapper">
+	<%- include('layout/header')-%>
+		<div class="main">
+		<nav>&nbsp;</nav>
+		<div class="content">
+
+			<form action="/login" method="POST" id="singin">
+			<h3>Авторизация</h3>
+				<input type="text" name="username" id="login_in" placeholder="login" value=""><br>
+				<input type="password" name="password" id="pas_in" placeholder="пароль" value="">
+				<img src="/img/icons8-%D1%81%D0%BF%D1%80%D1%8F%D1%82%D0%B0%D1%82%D1%8C-25.png" id="ps_in"><br><br>
+				<input type="hidden" name="_csrf" value="<%= csrfToken%>">
+				<button type="submit" name="done_in">Вход</button>
+			</form>
+			<hr>
+
+			<form action="/register" method="POST" id = "singup">
+			<h3>Впервые тут?</h3>
+				<p>Придумайте логин:</p>
+				<input type="text" name="login"  value="" placeholder="login"><br>
+				<span id="login"></span>
+				<p>Введите email:</p>
+				<input type="email" name="email" id ="em" value="" placeholder="email"><br>
+				<span id="email"></span>
+				<p>Введите пароль:</p>
+				<input type="password" name="pas" id="pswrd" value="" placeholder="пароль">
+				<img src="/img/icons8-%D1%81%D0%BF%D1%80%D1%8F%D1%82%D0%B0%D1%82%D1%8C-25.png" id = "ps_im">
+				<br>
+				<span id="pas"></span>
+				<p>Повторите пароль:</p>
+				<input type="password" name="pas1" id = 'pswrd1'value="" placeholder="пароль">
+				<img src="/img/icons8-%D1%81%D0%BF%D1%80%D1%8F%D1%82%D0%B0%D1%82%D1%8C-25.png" id="ps_im1">
+				<br>
+				<span id="pas1"></span>
+				<br><br>
+				<input type="hidden" name="_csrf" value="<%= csrfToken%>">
+				<button type="submit" name="done" id = "done" disabled>Зарегестрироваться</button>
+			</form>
+            <%if(mail == 'true' || mail == 'false' || form == 'true'){%>  
+				<div class="b-popup" id="popup1">
+				    <div class="b-popup-content">
+						<h3>Оповещение</h3>
+						<a href="javascript:PopUpHide()">X</a>
+						<p id="text"> <%if(mail == 'true'){%> Вам на почту отправлено письмо с ссылкой для подтверждения аккаунта. <%}else if(form == 'true'){%> Введены не корректные данные. <%}else if(mail == 'false'){%> Что-то пошло не так попробуйте еще раз.<%}%></p>
+				    </div>
+				</div>
+				<%}%>
+				<%//password
+				if(fail == 'true' || check == 'false' || check == 'true'){%>
+				<div class="b-popup" id="popup1">
+				    <div class="b-popup-content">
+						<h3>Оповещение</h3>
+						<a href="javascript:PopUpHide()">X</a>
+						<p id="text"><%if(fail == "true"){%>
+							Не правильно введен логин или пароль,попробуйте еще раз.
+							<%}else if(check == 'false'){%>
+							Простите, но мы не смогли подтвердить ваш аккаунт, попробуйте еще раз.
+							<%} else if(check == 'true'){%>
+							Ваш аккаунт подтвержден,можете авторезироваться.
+							<%}%>
+								
+							</p>
+				    </div>
+				</div>
+				<%}%>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript">
+		//устанавливаем высоту
+	var heightMain = function(){
+		var hS = $(document).height();
+		var needh = $('.inner-header').height();
+		var hb = hS-needh+'px';
+		$('.main').css('height',hb);
+	}
+	$(document).ready(heightMain);	
+	$(window).resize(heightMain);
+	//ограничиваем пользователя
+	$('.age>.neigbor_age button:not(.none)').click(function(){
+     $(this).toggleClass('check');
+	});
+	<%if(mail == 'true' || mail == 'false' || form == 'true' || fail == 'true' || check == 'false' || check == 'true'){%>
+	//баннер
+	 $(document).ready(
+        //Скрыть PopUp при загрузке страницы    
+        PopUpShow
+    );
+    setTimeout(PopUpHide,6000);
+    $('#popup1').on('click',PopUpHide);
+    //Функция отображения PopUp
+    var PopUpShow = function(){
+        $("#popup1").show();
+    }
+    //Функция скрытия PopUp
+    function PopUpHide(){
+        $("#popup1").fadeOut(1000);
+    }
+    <%}%>
+    //check sign up
+    let checkDone = ()=>{
+    	//check login on regular verd
+    	let checkRegLog = /^[A-Za-z0-9_-]{4,20}$/.test($('input[name="login"]').val())
+    	//check login isn't exist
+    	let logExist = $('#login').text().length == 0
+
+    	let log = checkRegLog && logExist
+
+    	//chekc email
+    	let $idImail = $('#email')
+
+    	let emailExist = $idImail.text() != 'Такой email уже существует.'
+
+    	let firstPas = $('input[name="pas"]').val()
+
+    	let secondPas = $('input[name="pas1"]').val()
+
+    	let lengthPas = firstPas.length >= 6
+
+    	let check = /^\S+$/.test(firstPas)
+
+    	let checkedPas = (firstPas == secondPas) && check && lengthPas
+
+    	let $done = $('#done')
+
+    	if(log && emailExist && checkedPas)	$done.prop('disabled',false)//let user singup
+    		else $done.prop('disabled',true)
+    }
+
+	$('form[action="/register"]>input').on('keyup',checkDone);
+
+
+
+	//help for users
+	//function for checked users entering
+	var checkedUser = function(va,reg,sign,eror,num,num1,jq){
+		//check num
+		if(jq.val().length <= num && jq.val().length >= num1){
+        //check reg   
+        jq.css('border','1px solid #100e15');
+			if(!(reg.test(jq.val()))){
+				$(eror).html('Допускаются только данные символы:'+sign);
+				jq.css('border','1px solid red');
+			}
+			//reg == true
+			else{
+			 $(eror).empty();
+			 jq.css('border','1px solid #100e15');
+			}
+		}
+		else if(jq.val().length == 0){
+			$(eror).empty();
+			 jq.css('border','1px solid #100e15');
+		}
+		//check num == wrong
+		else{
+			jq.css('border','1px solid red');
+		 	$(eror).html('Длина может быть только от '+num1+' и до '+num+' символов.');
+		}
+	};
+	function checkedPas(jq,span){
+		if(!(/^\S+$/.test(jq.val()))){
+			$(span).html('Пробелы не допускаются.');
+		}
+		else if(jq.val() == ''){
+			$(span).empty();
+			 jq.css('border','1px solid #100e15');
+		}
+		else if(jq.val().length <= 6){
+			$(span).html('Пароль должен именть не менее 6 символов.')
+		}
+		else{
+			$(span).empty();
+			 jq.css('border','1px solid #100e15');
+		}
+	};
+	function checkLogin(){
+		var data = {login:$(this).val()};
+		if($('#login').text().length == 0){
+			let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+			$.ajax({
+      				url:'/checklogin',
+      				headers:  {
+            		'CSRF-Token': token,
+          			},
+      				type:'POST',
+      				data:(data),
+      				dataType:'html',
+      				success:isLgRight
+      			});
+		}
+	};
+	function isEmRight(data){
+		if(data == 1){
+			$('#em').css('border','1px solid red');
+			$('#email').css('color','red');
+			$('#email').html('Такой email уже существует.');
+		}
+		else if(data == 0 && $('#em').val().length > 0){ 
+			$('#email').html('Убедитесь,что email введен вверно для следующего шага регестрации.');
+			$('#email').css('color','#100e15')
+			$('#em').css('border','1px solid #100e15');
+		}
+		else if($('#em').val().length == 0){
+			$('#email').empty();
+
+		}
+	}
+	function isLgRight(data){
+		if(data == 1){
+			$('input[name="login"]').css('border','1px solid red');
+			$('#login').html('Такой логин уже существует.');
+		}
+		else if(data == 0){ 
+			$('#login').empty();
+			$('input[name="login"]').css('border','1px solid #100e15');
+		}
+	}
+	$('input[name="login"]').on('input',function(){checkedUser(0,/^[A-Za-z0-9_-]+$/,'A-Z,a-z,0-9_-','#login',20,4,$(this));});
+	$('input[name="login"]').on('input',checkLogin);
+	
+	$('input[name="pas"]').on('input',function(){checkedPas($(this),'#pas');});
+	$('input[name="pas1"]').on('input',function(){checkedPas($(this),'#pas1');});
+	$('#em').on('input',function(){
+
+		let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        
+		var data = {email:$(this).val()};
+			$.ajax({
+      				url:'/checkemail',
+      				headers:  {
+            		'CSRF-Token': token,
+          			},
+      				type:'POST',
+      				data:(data),
+      				dataType:'html',
+      				success:isEmRight
+      			});
+	});
+	//help user for pas 
+	$('#ps_in').click(function(){pas_text('#pas_in',$(this))});
+	$('#ps_im').click(function(){pas_text('#pswrd',$(this))});
+	$('#ps_im1').click(function(){pas_text('#pswrd1',$(this))});
+	function pas_text(jq,$img){
+		if($(jq).attr('type') == 'password'){
+			$(jq).attr('type','text');
+			$img.attr('src','img/icons8-%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C-25.png')
+		}
+		else{
+			$(jq).attr('type','password');
+			$img.attr('src','img/icons8-%D1%81%D0%BF%D1%80%D1%8F%D1%82%D0%B0%D1%82%D1%8C-25.png')
+		}
+	};
+	</script>
+</body>
+</html>

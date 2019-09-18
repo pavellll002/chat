@@ -1,0 +1,36 @@
+.pop-up-wrapper{
+	
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    color: white;
+    min-width: 11em;
+    max-width: 15em;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+.pop-up{
+
+    background-color: rgba(50, 62, 83, .7);
+    padding: .7em;
+    border-radius: .5em;
+    margin-bottom: .25em;
+    display: none;
+
+}
+.pop-up-header{
+    display: flex;
+    justify-content: space-between;
+    font-size: .9em;
+    margin-bottom: .3em;
+}
+.exit{
+	cursor: pointer;
+}
+.notification{
+
+	color: #bddfef;
+    display: flex;
+    hyphens: manual;
+
+}

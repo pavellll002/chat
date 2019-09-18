@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Чат</title>
+	<link rel="stylesheet" type="text/css" href="/ccs/chat.css"/>
+	<meta name="io" contant="">
+	<%-include('layout/head')-%>
+</head>
+<body data-ui = "" onmousemove="read()">
+	<div id="wrapper container">
+			<%- include('layout/header')-%>
+	<div class="main row no-gutters">
+		<nav class="col-md-2">
+			<%- include('layout/nav')-%>
+		</nav>
+		
+		<div class="content col-md-6 d-flex flex-column ">
+			<%-include('chat/datauser')-%>
+			<%-include('chat/waiting')-%>
+			<%-include('chat/chating')-%>
+		</div>
+
+		<aside class="col-md-4"></aside>
+
+		<div class="pop-up-wrapper">
+			
+		</div>
+
+	</div>
+	
+	</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/lightbox.min.js"></script>
+	<script type="text/javascript" src="/js/libs_js/pop-up-chat.js"></script>
+	<script type="text/javascript" src="/js/nav.js"></script>
+	<script type="text/javascript" src="/js/chat.js"></script>
+</body>
+</html>
