@@ -1,6 +1,6 @@
 
     //Cookies.remove('ban');
-    const socket = io('http://clucker.ru/chat');
+    const socket = io('https://clucker.ru/chat');
     
 
 	
