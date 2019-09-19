@@ -413,13 +413,11 @@
    function onDisconnect(reason){
 
     //this will show user that someting went wrong
-    if(reason == 'transport close'){
         $('.content').empty()
         bootbox.alert({
           message:'Потеряно соеденение с сервером, попробуйте перезагрузить страницу'
         })
         socket.close()
-    }
 
    }
    function stop_search(){
