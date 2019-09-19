@@ -12,7 +12,7 @@ const Io 		= require('socket.io')(Server)
 
 const defaultOpts = {
   origin: [],
-  secure: false,
+  secure: true,
   xdomain: false,
   debug: false,
   ipLimit: 0,
