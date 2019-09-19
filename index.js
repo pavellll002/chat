@@ -12,7 +12,7 @@ const Io 		= require('socket.io')(Server)
 
 const defaultOpts = {
   origin: ['https://clucker.ru/chat'],
-  secure: true,
+  secure: false,
   xdomain: false,
   debug: false,
   ipLimit: 0,
