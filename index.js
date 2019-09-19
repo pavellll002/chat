@@ -11,7 +11,7 @@ const Server 	= require('http').Server(App)
 const Io 		= require('socket.io')(Server)
 
 const defaultOpts = {
-  origin: [],
+  origin: ['https://clucker.ru/chat'],
   secure: true,
   xdomain: false,
   debug: false,
