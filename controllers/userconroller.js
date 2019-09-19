@@ -53,7 +53,7 @@ userController.register = (req,res,next) => {
 
 			sendmail({
 			    from: "me@example.com",
-				subject: "Knock knock...",
+				subject: "",
 				to:   email,
 				html: body_mes,
 				type: 'text/html',
