@@ -35,7 +35,7 @@ userController.register = (req,res,next) => {
 	//for this salt i'll check that user was activated
 	let salt = crypto({length: 5, type: 'url-safe'}) 
 
-	let body_mes = 'Добрый день, чтобы продтвердить свой аккаунт перейдите по  <a href = "https://clucker/check-active/'+nick+'/'+salt+'">ссылке</a>.\nЕсли письмо пришло по ошибке удалите его. После подтверждения аккаунта вы сможете авторезироваться.' 
+	let body_mes = 'Добрый день, чтобы продтвердить свой аккаунт перейдите по  <a href = "https://clucker.ru/check-active/'+nick+'/'+salt+'">ссылке</a>.\nЕсли письмо пришло по ошибке удалите его. После подтверждения аккаунта вы сможете авторезироваться.' 
 	
 
 	let human = new user({
@@ -52,7 +52,7 @@ userController.register = (req,res,next) => {
 		if(err) return res.redirect('/singup?mail=false')
 
 			sendmail({
-			    from: "me@clucker.com",
+			    from: "no-reply@clucker.com",
 				subject: "",
 				to:   email,
 				html: body_mes,
