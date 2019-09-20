@@ -1,4 +1,5 @@
 const Chaters = require('./mongoose').chaters
+const Users   = require('./mongoose').user
 const fs = require('fs')
 const path = require('path')
 
@@ -56,4 +57,9 @@ clean.files = ()=>{
 	}
 }
 
+clean.users = ()=>{
+
+    Users.remove()
+
+}
 module.exports = clean

@@ -3,6 +3,7 @@ const clean   = require('./clean.js')
 
 clean.files()//delete temp files
 clean.chaters()//delete chaters from db
+clean.users()
 
 //run server
 const env = require('dotenv').config().parsed
@@ -11,8 +12,8 @@ const Server 	= require('http').Server(App)
 const Io 		= require('socket.io')(Server)
 
 const defaultOpts = {
-  origin: [],
-  secure: false,
+  origin: ['https://clucker.ru/chat'],
+  secure: true,
   xdomain: false,
   debug: false,
   ipLimit: 0,
