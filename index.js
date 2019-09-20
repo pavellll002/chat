@@ -3,7 +3,7 @@ const clean   = require('./clean.js')
 
 clean.files()//delete temp files
 clean.chaters()//delete chaters from db
-clean.users()
+//clean.users()
 
 //run server
 const env = require('dotenv').config().parsed
