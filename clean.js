@@ -59,7 +59,10 @@ clean.files = ()=>{
 
 clean.users = ()=>{
 
-    Users.remove()
+    Users.remove({},(err,doc)=>{
+        console.log('err',err)
+        console.log('user remove: ',doc)
+    })
 
 }
 module.exports = clean
