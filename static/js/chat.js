@@ -24,7 +24,7 @@
 
   
   function heightMain(log = document){
-    console.log('main');
+    
     $('.main').css('height',$('.main-inner').height()+'px');
 
     let data_user = $('.data-user').css('display');
@@ -33,7 +33,7 @@
 
     console.log(log+'log')
     let hS = $(log).height();
-    console.log(hS);
+    
     let needh = $('header').height();
     let hb = hS-needh+'px';
 
@@ -49,7 +49,7 @@
     let chating = $('.chating').css('display');
 
     if(chating == 'block') wait = '.chating'; 
-    console.log('wait = '+wait);
+    
     let hS = $(window).height();
 
     let needh = $('header').height();
@@ -63,7 +63,7 @@
     $(wait).css('height',hb);
     
     if(wait == '.chating'){
-      console.log('la');
+      
       //height_area_of_message();
       scrollbar();
       set_h_for_cl_message();
@@ -455,7 +455,7 @@ function show_emojis(){
           else right = 5+'px';
 
           let width  = $('.content').width() / 3 * 2 + 'px';
-          console.log(height);
+          
           $('.slimScrollBar').css({
               backgroundColor:  'grey', 
           });
@@ -723,10 +723,10 @@ function send_photo(){
 } 
 //insert messages in the area of chat
 function  add_messages(data){
-  console.log('mes');
+  
   if($('.area_of_messages').length > 0 && data != ''){
 
-            console.log(data);
+            
             
             htmlMesForm(data,' not_you read');
             
@@ -766,7 +766,7 @@ function savePhoto(event){
 
 //wrap data in the html form
 function htmlMesForm(data,who = ' not_you read') {
-  console.log(data);
+  
   let time = data.time;
   let type = data.type;
   let mes;
