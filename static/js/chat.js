@@ -764,10 +764,20 @@ function savePhoto(event){
 
 }
 
+function getTime(){
+
+      let date   = new Date();
+
+        let mins   = addZero(date.getMinutes()); 
+        let hours  = addZero(date.getHours());
+
+        return hours+':'+mins;
+
+    }
 //wrap data in the html form
 function htmlMesForm(data,who = ' not_you read') {
   
-  let time = data.time;
+  let time = getTime()/*data.time*/;
   let type = data.type;
   let mes;
   
