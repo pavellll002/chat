@@ -290,11 +290,8 @@ function onConnect(socket) {
 			//remove html from string
 			let str = Cd.escapeHTML(data.trim());
 
-    		//let time   = Cd.getTime();
-
 			let obj = {
 
-				//time: 	time,
 				type: 	'string',//this need because user can also send other datas bisides of string from this chanel
 				mes: 	str,
 

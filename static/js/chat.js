@@ -777,7 +777,7 @@ function getTime(){
 //wrap data in the html form
 function htmlMesForm(data,who = ' not_you read') {
   
-  let time = getTime()/*data.time*/;
+  let time = getTime();
   let type = data.type;
   let mes;
   

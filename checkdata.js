@@ -54,16 +54,6 @@ function escapeHTML (unsafe_str){
       .replace(/\'/g, '&#39;'); // '&apos;' is not valid HTML 4
 }
 
-function getTime(){
-
-			let date   = new Date();
-
-    		let mins   = addZero(date.getMinutes()); 
-    		let hours  = addZero(date.getHours());
-
-    		return hours+':'+mins;
-
-		}
 function addZero(i){
 	if (i < 10) {
 
@@ -76,5 +66,4 @@ function addZero(i){
 module.exports = {
 	check_data: check_data,
 	escapeHTML: escapeHTML,
-	getTime: 	getTime,
 };
