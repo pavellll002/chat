@@ -21,6 +21,7 @@
   $(document).ready(check_for_ban);
   $(document).ready(set_data_users);
   $(document).ready(add_chating_file);
+  $('body').on('mousemove',read)
 
   
   function heightMain(log = document){
