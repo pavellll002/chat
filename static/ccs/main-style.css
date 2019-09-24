@@ -119,12 +119,10 @@ left: 0px;
 	right: 5%;
 	font-size:  1.5em;
 }
-/*.b-popup-content>a:hover{
-   background: rgba(50, 62, 83,1);
-   display: block;
-   border: 1px solid white;
-   border-radius: 5%;
-}*/
+.b-popup-content>a:hover{
+	text-decoration: none;
+	color:white;
+}
 .b-popup-content>p{
 	color:#bddfef;
 	font-family: 'Ubuntu', sans-serif;
