@@ -1,5 +1,5 @@
 <div class="chating " style="display: none">
-	<div class="begin">
+	<div class="begin" id="begin_2">
 		<span>
 			<h3>Чат:</h3>
 	<i id="typing">пишет...</i>
@@ -8,11 +8,14 @@
 			
 			<button id="showHideImage" onclick="showHideImage()" title="Показать/Спрятать изображение">Фото</button>
 			
-			<button id="stop_chat"	onclick="stop_chat()" >Отключиться</button>
+			<button id="stop_chat"	onclick="stop_chat()" title="Отключиться" >X</button>
 
 		</div>
 	</div>
 	<div class="area_of_messages ">
+		<div class="message" id="userFouned">
+			<hr><i>Собеседник найден</i><hr>
+		</div>
 	</div>
 			<div class="choice">
 				<button class="change_data" onclick="change_the_data()">Изменить данные</button>

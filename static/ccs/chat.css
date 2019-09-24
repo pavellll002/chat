@@ -9,7 +9,7 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	height: 6%;
+	min-height: max-content;
 	display: none;
 }
 .change_data,.new_search{
@@ -29,7 +29,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-   	height:6%;
+   	min-height: max-content;
    	background: rgba(189, 223, 239, .5);
    	border-bottom: 1px solid #408fb4; 
    	box-shadow: 0px 8px 18px -13px #000000;
@@ -94,6 +94,7 @@ hr{
 	text-align: center;
 }
 .inner-online>p{
+	word-break: break-all;
 	margin-bottom: 0;
 	font-family: 'Kanit', sans-serif;
 	color: rgba(50, 62, 83, .7);
@@ -136,6 +137,9 @@ hr{
     outline: none;
     cursor: pointer;
 }
+#stop_chat{
+	padding: 0 .5em;
+}
 .hidden{
 	background-color: #ccc !important;
 }
@@ -155,7 +159,7 @@ hr{
 }
 
 #text_message{
-	margin:.5% 0 .5%;
+	margin:.5em 0 .5em;
 	background-color: white; 
 	height: 80%;
     width: 90%;
@@ -166,7 +170,7 @@ hr{
 }
 #inner_text_message{
 	overflow: hidden;
-	height: 100%;
+	height: 3em;
     width: 90%;
     outline: none;
     border:none;
@@ -214,7 +218,7 @@ hr{
 	cursor: pointer;
 }
 .data_for_message{
-	height: 9%;
+	min-height: max-content;
 	background: #deeff769;
     border-top: 1px solid #74aec9;
 	display: flex;
@@ -301,6 +305,16 @@ hr{
 .not_you .time{
 	margin-left: .5em;
 }
+#userFouned{
+	display:flex;
+	align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    color: rgba(157, 157, 157, 0.95);
+    font-size: .95em;
+}
+#userFouned>i{
+	min-width: max-content;
+}
 .text_message{
 	 max-width: 80%;
 	 line-height: 1.2em;
@@ -375,8 +389,8 @@ hr{
     bottom: 8%;
     background: white;
     overflow: hidden;
-    width: 5%;
-    height: 6%;
+    width: 3em;
+    height: 2.5em;
     border: 1px solid #9d9d9dd9;
     border-radius: 5px;
 }

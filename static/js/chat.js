@@ -54,9 +54,9 @@
 
     let needh = $('header').height();
     
-    //let begin = $('.begin').height();
+    let begin = $('#begin').height();
     
-    let begin = hS*.06;
+    console.log('begin',begin)
     
     let hb = hS-needh-begin+'px';
     
@@ -342,9 +342,11 @@
    }
 
    function onChat(data) {
-
+    let elUserAdded = '<div class="message" id="userFouned"><hr><i>Собеседник найден</i><hr></div>'
+    
     $('.wait,.data-user').css({'display':'none'});
     $('.chating,#stop_chat').css({'display':'block'});
+    $('.area_of_messages').append(elUserAdded)
     soundClick();
     heightWaiting();
    }
@@ -459,6 +461,9 @@ function show_emojis(){
           $('.slimScrollBar').css({
               backgroundColor:  'grey', 
           });
+
+          let bottom = $('.data_for_message').height()+3+'px'
+
     $bar_emojs.slimScroll(
       {
         height:           height,
@@ -470,13 +475,13 @@ function show_emojis(){
       ).parent().css(
             {
               position:   'fixed',
-              bottom:     '8%',
+              bottom:     bottom,
               right:      right,
               width:      width,
               display:    'block',
             }
             ).end().css({
-              display: 'block'
+              display: 'block',
             });
   }
   );
@@ -502,7 +507,7 @@ function show_emojis(){
     add_emojis();
     send_message();
     send_media();
-    scrollbar();
+    //scrollbar();
     add_messages();
 }
 $(document).ready(dataem);
@@ -654,7 +659,9 @@ $(document).ready(send_media());
         
         if(able == 'false') return false
 
-        $('.file-upload').fadeIn(500);
+          let bottom = $('.data_for_message').height()+3+'px'
+
+        $('.file-upload').fadeIn(500).css('bottom',bottom);
         $('#add_photo_to_server').click(
             function(){
               $('.file-upload').fadeOut(500);
@@ -894,13 +901,16 @@ function coockyreload(){
       //scroll bar
       
       function scrollbar(){
+        $(document).ready(function(){
+
         let choice = $('.choice');
         let chating = $('.chating').height();
 
-        let begin = $('.begin').height();
+        let begin = $('#begin_2').height();
 
         let info = $('.data_for_message').height();
 
+       
         let choice_height = choice.height();
 
         let choice_dis = choice.css('display');
@@ -909,6 +919,8 @@ function coockyreload(){
 
         let area = chating-begin-info-choice_height;
         
+         console.log('data',typeof begin)
+
         $('.area_of_messages').slimscroll(
           {
       
@@ -919,6 +931,7 @@ function coockyreload(){
 
           }
           );
+        })
 
       }
       
