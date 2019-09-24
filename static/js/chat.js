@@ -192,7 +192,8 @@
         return elem.value;
       }).get();
       //get bad elements
-      let $wrong_obj = $obj.map(function(i,elem,) {
+      let $wrong_obj = $obj.map((i,elem)=> {
+        //here i deleted ,
         let age = elem.value;
         /*if(i == 0 && age != '' && (isNaN(age) || age < 5) ){
           bootbox.dialog({
