@@ -375,11 +375,14 @@
    function onStoped(data) {
      $el_but_stop_chat = $('#stop_chat')
      $el      = $('.choice');
-     $el_in_t = $('#inner_text_message'); 
+     $el_in_t = $('#inner_text_message')
+     $area_of_messages = $('.area_of_messages')
+     elUserDel = '<div class="message userFouned" ><hr><i>Чат окончен</i><hr></div>'
 
      $el.css('display','flex');
      $el_but_stop_chat.css('display','none')
-     $el_in_t.prop('contenteditable',false);
+     $area_of_messages.append(elUserDel)
+     $el_in_t.prop('contenteditable',false)
      $el_in_t.empty();
       socket.emit('lul stop');
      scrollbar();

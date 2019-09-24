@@ -13,6 +13,7 @@
 	display: none;
 }
 .change_data,.new_search{
+	margin:.2em;
 	color:white;
 	border: 0 solid rgba(50, 62, 83, 0.7);
     font-family: 'Ubuntu', sans-serif;
@@ -305,14 +306,14 @@ hr{
 .not_you .time{
 	margin-left: .5em;
 }
-#userFouned{
+.userFouned{
 	display:flex;
 	align-items: center;
     font-family: 'Ubuntu', sans-serif;
     color: rgba(157, 157, 157, 0.95);
     font-size: .95em;
 }
-#userFouned>i{
+.userFouned>i{
 	min-width: max-content;
 }
 .text_message{
