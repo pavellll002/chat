@@ -342,7 +342,7 @@
    }
 
    function onChat(data) {
-    let elUserAdded = '<div class="message" id="userFouned"><hr><i>Собеседник найден</i><hr></div>'
+    let elUserAdded = '<div class="message userFouned"><hr><i>Собеседник найден</i><hr></div>'
     
     $('.wait,.data-user').css({'display':'none'});
     $('.chating,#stop_chat').css({'display':'block'});
