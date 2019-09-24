@@ -13,6 +13,9 @@
 
   		})
 
+      if(elems.length != 0 )  $('.didntsave').remove()
+        
+
   		let $gallery = $('#gallery')//here will be everything images
   		
   		let optionsGrid =	{
@@ -25,7 +28,6 @@
 				responsive: false,			// To disable the grid responsivness (default is true)
 			}
 
-  		$('.didntsave').remove()
   		//append them to #gallery
   		elems.forEach((item)=>{
   			$gallery.append(item)
