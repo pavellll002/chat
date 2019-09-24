@@ -147,7 +147,7 @@ chatController.photo_save = (req, res)=> {
 		uploadImg(req,res,(err) => {
 
 			if(err) res.end(0) 
-			
+			console.log(req)
 			let file = req.file 
 
 
