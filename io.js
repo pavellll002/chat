@@ -310,12 +310,10 @@ function onConnect(socket) {
 
 			let path_to_file 	= './static/uploads/photo/'+data;
 
-			let time 			= Cd.getTime();
-			
+						
 			let str = Cd.escapeHTML(data.trim());
 
 			let obj = {
-				time: 	time,
 				type: 	'img',
 				mes: 	str,
 			}
