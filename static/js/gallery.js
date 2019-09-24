@@ -25,7 +25,7 @@
 				responsive: false,			// To disable the grid responsivness (default is true)
 			}
 
-  		
+  		$('.didntsave').remove()
   		//append them to #gallery
   		elems.forEach((item)=>{
   			$gallery.append(item)

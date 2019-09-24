@@ -3,3 +3,9 @@
 	border-radius: .5em !important;
 	opacity: 0;
 }
+.didntsave{
+	text-align: center;
+    color: rgba(157, 157, 157, 0.95);
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 1.5em;
+}
