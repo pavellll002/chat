@@ -366,7 +366,7 @@
       $('.data-user').css({'display':'block'});
 
       heightMain(document);
-      limit_user();
+     // limit_user();
       set_data_users();
 
       socket.emit('online','');
