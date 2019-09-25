@@ -6,7 +6,7 @@ let menuClick = ()=>{
 	let stateMenu	=	$wrapnav.css('display')
 
 	if(stateMenu == 'none'){
-		$wrapnav.show(200)
+		$wrapnav.show(200).css('display','flex')
 	}
 	else $wrapnav.hide(200,()=>{
 		$(this).css('display','none')	
