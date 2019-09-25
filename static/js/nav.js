@@ -15,7 +15,7 @@ let menuClick = ()=>{
 }
 let changeMenu = ()=>{
 	let windowWidth = $(window).width()
-	if(windowWidth >= 756)	$wrapnav.css('display','block')
+	if(windowWidth >= 756)	$wrapnav.css('display','flex')
 		else	$wrapnav.css('display','none')
 
 }
