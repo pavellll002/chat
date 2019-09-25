@@ -32,7 +32,6 @@
     
     if(data_user != 'block' ) log = window;
 
-    console.log(log+'log')
     let hS = $(log).height();
     
     let needh = $('header').height();
@@ -57,7 +56,6 @@
     
     let begin = $('#begin').height();
     
-    console.log('begin',begin)
     
     let hb = hS-needh-begin+'px';
     
@@ -446,7 +444,7 @@ function show_emojis(){
       let able = $el.prop('contenteditable')
 
       if(!able){
-        console.log(able)
+        
         return false
       } 
       //heigth of emoj's tab
@@ -924,7 +922,6 @@ function coockyreload(){
 
         let area = chating-begin-info-choice_height;
         
-         console.log('data',typeof begin)
 
         $('.area_of_messages').slimscroll(
           {
