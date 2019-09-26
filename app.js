@@ -28,7 +28,7 @@ let fileStoreOptions 	= {}
     	saveUninitialized: false,
     	httpOnly: true,
     	cookie:{
-    		maxAge: new Date(Date.now() + 60*60*24*365),
+    		maxAge: 60*60*24*365),
     	}
 	})) 
 	
