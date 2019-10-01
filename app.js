@@ -61,9 +61,9 @@ let fileStoreOptions 	= {}
 	//settings
 	app.get('/settings',csrfProtection,userController.settings)
 	//rules
-	app.get('/politika',userController.politika)
+	app.get('/politika',csrfProtection,userController.politika)
 
-	app.get('/agreement',userController.agreement)
+	app.get('/agreement',csrfProtection,userController.agreement)
 	//post routs
 
 	//register
