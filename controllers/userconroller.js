@@ -256,6 +256,7 @@ userController.settings = (req,res)=>{
 }
 
 userController.politika = (req,res)=>{
+	res.end('hello world')
 	res.end('views/rules/politika')
 }
 
