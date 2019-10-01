@@ -255,6 +255,13 @@ userController.settings = (req,res)=>{
 	res.render('settings',obj)
 }
 
+userController.politika = (req,res)=>{
+	res.end('rules/politika')
+}
+
+userController.agreement = (req,res)=>{
+	res.end('rules/agreement')
+}
 
 
 

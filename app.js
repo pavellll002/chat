@@ -60,7 +60,10 @@ let fileStoreOptions 	= {}
 	app.get('/gallery',csrfProtection,userController.gallery) 
 	//settings
 	app.get('/settings',csrfProtection,userController.settings)
+	//rules
+	app.get('/politika',userController.politika)
 
+	app.get('/agreement',userController.agreement)
 	//post routs
 
 	//register
