@@ -256,11 +256,29 @@ userController.settings = (req,res)=>{
 }
 
 userController.politika = (req,res)=>{
-	res.render('views/rules/politika')
+
+	let auth = req.isAuthenticated()
+	let csrf = req.csrfToken()
+
+	let obj = {
+		auth: auth,
+		csrfToken:csrf,
+	}
+
+	res.render('views/rules/politika',obj)
 }
 
 userController.agreement = (req,res)=>{
-	res.render('views/rules/agreement')
+
+	let auth = req.isAuthenticated()
+	let csrf = req.csrfToken()
+
+	let obj = {
+		auth: auth,
+		csrfToken:csrf,
+	}
+
+	res.render('views/rules/agreement',obj)
 }
 
 
