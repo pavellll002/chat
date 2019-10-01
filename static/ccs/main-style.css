@@ -49,6 +49,9 @@ header{
 .both{
 	margin-left: 1em;
 }
+.clucker{
+	color: white;
+}
 .both img{
 	cursor: pointer;
 }
@@ -135,6 +138,9 @@ left: 0px;
 @media screen and (max-width:767px){
  .wrapper-nav{
 		display:none;
+	}
+	.clucker{
+		display: none;
 	}
 }
 @media screen and (min-width:768px){
