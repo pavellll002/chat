@@ -256,12 +256,11 @@ userController.settings = (req,res)=>{
 }
 
 userController.politika = (req,res)=>{
-	res.end('hello world')
-	res.end('views/rules/politika')
+	res.render('views/rules/politika')
 }
 
 userController.agreement = (req,res)=>{
-	res.end('views/rules/agreement')
+	res.render('views/rules/agreement')
 }
 
 
