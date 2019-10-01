@@ -409,9 +409,9 @@
 
    function onIo(data){
     
-    let $io = $('meta[name="io"]')
+    let $io = $('body')
 
-    $io.attr('content',data)
+    $io.attr('data-io',data)
         
    }
 
@@ -696,7 +696,7 @@ function send_photo(){
 
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         
-        let io =  document.querySelector('meta[name="io"]').getAttribute('content') 
+        let io =  document.querySelector('body').getAttribute('data-io') 
         let contenttype = {
           headers:  {
             'content-type': 'multipart/form-data',
