@@ -51,7 +51,11 @@ header{
 }
 .clucker{
 	color: white;
-	font-size: 2em;
+	font-size: 1.8em;
+}
+.clucker:hover{
+	color:white;
+	text-decoration: none;
 }
 .both img{
 	cursor: pointer;
