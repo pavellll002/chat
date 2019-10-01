@@ -849,7 +849,7 @@ function set_h_for_cl_message(){
         var  $height_this  = $(this).find('.span').height();//
         var $img = $parent.find('.img_chats');
         if($img.length > 0){
-          $img.imagesLoaded(
+          $img.imagesLoaded({background:true},
             function(){
               $img.parents('.text_message').css('max-width','40%');
               height_area_scroll += $img.height()+17;
