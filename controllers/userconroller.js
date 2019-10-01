@@ -265,7 +265,7 @@ userController.politika = (req,res)=>{
 		csrfToken:csrf,
 	}
 
-	res.render('views/rules/politika',obj)
+	res.render('rules/politika',obj)
 }
 
 userController.agreement = (req,res)=>{
@@ -278,7 +278,7 @@ userController.agreement = (req,res)=>{
 		csrfToken:csrf,
 	}
 
-	res.render('views/rules/agreement',obj)
+	res.render('rules/agreement',obj)
 }
 
 
