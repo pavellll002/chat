@@ -1,3 +1,4 @@
+try{
 const clean   = require('./clean.js')
 //before starting server we should clean some thins
 
@@ -39,3 +40,7 @@ Io.use((socket, next) => {
 require('./io').io(Chat, Sp, defaultOpts) 
 
 Server.listen(env.PORT) 
+}
+catch(err){
+  console.log(err)
+}
