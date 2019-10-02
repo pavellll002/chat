@@ -1,4 +1,4 @@
-let $wrapnav	=	$('.wrapper-nav')
+let $wrapnav	=	$('nav')
 let $menu		=	$('.both img')
 
 let menuClick = ()=>{
