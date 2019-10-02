@@ -3,8 +3,9 @@ function check_data(data) {
 	let your_sex = data.sex.you;
 	let intelocutor_sex = data.sex.intelocutor;
 	let ages = data.ages;
+	let agree = data.agree
 
-	if(check_you(your_sex) && check_int(intelocutor_sex) && ckeck_ages(ages)) return true;
+	if(check_you(your_sex) && check_int(intelocutor_sex) && ckeck_ages(ages) && check_agree(agree)) return true;
 	else return false;
 };
 
@@ -44,6 +45,10 @@ function ckeck_ages(as) {
 
 	}
 	else return false;
+}
+function check_agree(agree){
+	if(agree == true) return true
+		else false
 }
 function escapeHTML (unsafe_str){
     return unsafe_str

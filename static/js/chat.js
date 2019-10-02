@@ -126,7 +126,7 @@
 
    //start chat
    var collectData = function(){
-      var anon = check_anon();
+      var agree = check_anon();
         
    		var you_sex = get_data_you('.you_age .sex button','.you_age .sex .check');
 
@@ -134,17 +134,18 @@
 
    		var intelocutor_sex = get_data('.neigbor_age .sex button','.neigbor_age .sex>.check');
 
-   		sendData(you_sex,intelocutor_sex,ages,anon);
+   		sendData(you_sex,intelocutor_sex,ages,agree);
 
      };
 
-     function sendData(ys,is,ages,anon){
+     function sendData(ys,is,ages,agree){
             let obj = {
                 sex:{
                   you:ys,
                   intelocutor:is
                 },
-                ages:ages
+                ages:ages,
+                agree:agree,
             };
             Cookies.set( 'data_user', obj, { expires: 365});
             socket.emit('search',obj);
@@ -152,10 +153,14 @@
       
 
      function check_anon(){
-          if($('.but_start>li').is('.anon')){
-           return $('#an').prop('checked');
-          }
-          else return 0;
+
+          let $agree =  $('#iagree')
+
+          let checked = $agree.prop('checked')
+
+          console.log(checked)
+
+          return checked
         }
 
 

@@ -101,6 +101,10 @@ hr{
 .agreement a{
 	color: #408fb4;
 }
+
+.agreement a:hover{
+	color: #408fb4;
+}
 .online{
 	text-align: center;
 }
