@@ -91,6 +91,16 @@ hr{
 	background: #f5f5f5; 
 	margin: 0 5% 0 5%;
 }
+.neigbor_age{
+	margin-bottom: 1.5em;
+}
+.agreement>p{
+	color: #323e53;
+    font-size: .8em;
+}
+.agreement a{
+	color: #408fb4;
+}
 .online{
 	text-align: center;
 }
