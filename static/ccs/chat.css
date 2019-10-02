@@ -97,6 +97,9 @@ hr{
 .agreement>p{
 	color: #323e53;
     font-size: .8em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 .agreement a{
 	color: #408fb4;
