@@ -95,6 +95,7 @@ nav a:hover{
 .rules{
 	position: absolute;
 	bottom: 1em;
+	font-size: .6em;
 }
 /*Всплывающее окно на jquery */
 .b-popup{
@@ -145,10 +146,8 @@ left: 0px;
 	font-size: 1em; 
 }
 @media screen and (max-width:767px){
- .wrapper-nav{
-		display:none;
-	}
-	.clucker{
+
+	.clucker,.rules,.wrapper-nav{
 		display: none;
 	}
 }
