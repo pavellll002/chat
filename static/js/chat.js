@@ -165,7 +165,24 @@
 
           Cookies.set('agreement',checked)
 
-          console.log(checked)
+          if(checked === false){
+
+            let $agreement = $('.agreement>p')
+
+            let styles_agreement_before = {
+              'text-decoration': 'underline',
+            }
+
+            let styles_agreement_after = {
+              'text-decoration': 'none',
+            }
+
+            $(path).animate({color:'#e94a54',borderColor:'#e94a54',borderWidth:'2px'},4000).animate({color:'#333',borderColor:'#ccc',borderWidth:'1px'},3000);
+            
+            $agreement.animate(styles_agreement_before,4000).animate(styles_agreement_after,4000)
+
+          }
+
 
           return checked
         }
@@ -181,19 +198,7 @@
           }
           else{
 
-            let $agreement = $('.agreement>p')
-
-            let styles_agreement_before = {
-              'text-decoration': 'underline',
-            }
-
-            let styles_agreement_after = {
-              'text-decoration': 'none',
-            }
-
-            $(path).animate({color:'#e94a54',borderColor:'#e94a54',borderWidth:'2px'},4000).animate({color:'#333',borderColor:'#ccc',borderWidth:'1px'},3000);
             
-            $agreement.animate(styles_agreement_before,4000).animate(styles_agreement_after,4000)
             return false;
           } 
       }
@@ -304,7 +309,8 @@
 
         var ages = get_age('.old>input');
 
-        if(ages === false || you_sex === false ||  intelocutor_sex === false)return true;
+
+        if(ages === false || you_sex === false ||  intelocutor_sex === false )return true;
         else return false;
       }
      $('#start').on('click',begin_chat);
