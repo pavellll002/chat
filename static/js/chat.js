@@ -184,11 +184,11 @@
             let $agreement = $('.agreement>p')
 
             let styles_agreement_before = {
-              text-decoration: 'underline',
+              'text-decoration': 'underline',
             }
 
             let styles_agreement_after = {
-              text-decoration: 'none',
+              'text-decoration': 'none',
             }
 
             $(path).animate({color:'#e94a54',borderColor:'#e94a54',borderWidth:'2px'},4000).animate({color:'#333',borderColor:'#ccc',borderWidth:'1px'},3000);
