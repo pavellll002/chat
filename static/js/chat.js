@@ -179,8 +179,8 @@
 
             
             $agreement.animate(styles_agreement_before,4000).animate(styles_agreement_after,4000)
-            $('.agreement>a').css('color','#408fb4')
-            
+         
+
           }
 
 
