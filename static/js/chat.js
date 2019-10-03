@@ -170,15 +170,17 @@
             let $agreement = $('.agreement>p')
 
             let styles_agreement_before = {
-              textDecoration: 'underline',
+              color: '#e94a54',
             }
 
             let styles_agreement_after = {
-              textDecoration: 'none',
+              color: '#323e53',
             }
 
             
-            $agreement.css(styles_agreement_before)//.animate(styles_agreement_after,4000)
+            $agreement.animate(styles_agreement_before,4000).animate(styles_agreement_after,4000)
+            $('.agreement>a').css('color','#408fb4')
+            
           }
 
 
