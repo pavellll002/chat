@@ -112,7 +112,7 @@
 
     if(checked == undefined) return false
 
-    $('#iagree').prop('checked',checked)
+    $('#iagree').prop('checked',checked_agreement)
 
   }
 
