@@ -170,11 +170,11 @@
             let $agreement = $('.agreement>p')
 
             let styles_agreement_before = {
-              'text-decoration': 'underline',
+              textDecoration: 'underline',
             }
 
             let styles_agreement_after = {
-              'text-decoration': 'none',
+              textDecoration: 'none',
             }
 
             
