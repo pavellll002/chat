@@ -110,7 +110,7 @@
       $('.neigbor_age .sex [data-index ="'+v+'"]').addClass('check');
     }
 
-    if(checked == undefined) return false
+    if(checked_agreement == undefined) return false
 
     $('#iagree').prop('checked',checked_agreement)
 
