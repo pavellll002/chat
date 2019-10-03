@@ -178,7 +178,7 @@
             }
 
             
-            $agreement.animate(styles_agreement_before,4000).animate(styles_agreement_after,4000)
+            $agreement.css(styles_agreement_before)//.animate(styles_agreement_after,4000)
           }
 
 
