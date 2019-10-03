@@ -165,8 +165,8 @@
 
           Cookies.set('agreement',checked)
 
-          if(checked === false){
-            
+          if(checked == false){
+
             let $agreement = $('.agreement>p')
 
             let styles_agreement_before = {
