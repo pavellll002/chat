@@ -171,10 +171,12 @@
 
             let styles_agreement_before = {
               color: '#e94a54',
+              fontSize:'.81em',
             }
 
             let styles_agreement_after = {
               color: '#323e53',
+              fontSize:'.8em',
             }
 
             
