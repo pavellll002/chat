@@ -166,7 +166,7 @@
           Cookies.set('agreement',checked)
 
           if(checked === false){
-
+            
             let $agreement = $('.agreement>p')
 
             let styles_agreement_before = {
@@ -177,10 +177,8 @@
               'text-decoration': 'none',
             }
 
-            $(path).animate({color:'#e94a54',borderColor:'#e94a54',borderWidth:'2px'},4000).animate({color:'#333',borderColor:'#ccc',borderWidth:'1px'},3000);
             
             $agreement.animate(styles_agreement_before,4000).animate(styles_agreement_after,4000)
-
           }
 
 
@@ -198,8 +196,10 @@
           }
           else{
 
-            
-            return false;
+
+            $(path).animate({color:'#e94a54',borderColor:'#e94a54',borderWidth:'2px'},4000).animate({color:'#333',borderColor:'#ccc',borderWidth:'1px'},3000);
+          
+             return false;
           } 
       }
 
