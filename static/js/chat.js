@@ -83,7 +83,9 @@
   }
 
   function set_data_users() {
-    let data_user = Cookies.get('data_user'); 
+    let data_user = Cookies.get('data_user');
+    let checked_agreement =  Cookies.get('checked')
+
     if(data_user == undefined)return false;
 
     data_user = JSON.parse(data_user);
@@ -108,6 +110,9 @@
       $('.neigbor_age .sex [data-index ="'+v+'"]').addClass('check');
     }
 
+    if(checked == undefined) return false
+
+    $('#iagree').prop('checked',checked)
 
   }
 
@@ -158,6 +163,8 @@
 
           let checked = $agree.prop('checked')
 
+          Cookies.set('agreement',checked)
+
           console.log(checked)
 
           return checked
@@ -173,7 +180,20 @@
                return ar_sex;
           }
           else{
+
+            let $agreement = $('.agreement>p')
+
+            let styles_agreement_before = {
+              text-decoration: 'underline',
+            }
+
+            let styles_agreement_after = {
+              text-decoration: 'none',
+            }
+
             $(path).animate({color:'#e94a54',borderColor:'#e94a54',borderWidth:'2px'},4000).animate({color:'#333',borderColor:'#ccc',borderWidth:'1px'},3000);
+            
+            $agreement.animate(styles_agreement_before,4000).animate(styles_agreement_after,4000)
             return false;
           } 
       }
