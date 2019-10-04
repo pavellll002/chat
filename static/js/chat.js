@@ -745,7 +745,11 @@ function send_photo(){
           let data = res.data;
   
           if(data == 0) return false
-            else if(data == 'err') $('.pop-up-wrapper').popup('Не получилось отправить фото, попробуйте еще раз')
+            else if(data == 'err'){
+
+             $('.pop-up-wrapper').popup('Не получилось отправить фото, попробуйте еще раз')
+             return false
+           }
             
           let date   = new Date();
 
