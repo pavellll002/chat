@@ -150,7 +150,7 @@ chatController.photo_save = (req, res)=> {
 
 			let file = req.file 
 
-			if(file == undefined) return req.end('err')
+			if(file == undefined) return res.end('err')
 
 			Chaters.findOneAndUpdate({
 				io: id,

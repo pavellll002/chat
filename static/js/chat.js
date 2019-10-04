@@ -109,7 +109,7 @@
     for(let v of sex_i){
       $('.neigbor_age .sex [data-index ="'+v+'"]').addClass('check');
     }
-
+    
     if(checked_agreement == undefined) return false
 
     $('#iagree').prop('checked',checked_agreement)
