@@ -145,6 +145,18 @@ left: 0px;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 1em; 
 }
+.agreement>p{
+	color: #323e53;
+    font-size: .8em;
+    text-decoration-color: '#e94a54';
+}
+.agreement a{
+	color: #408fb4;
+}
+
+.agreement a:hover{
+	color: #408fb4;
+}
 @media screen and (max-width:767px){
 
 	.clucker,.rules,.wrapper-nav{
