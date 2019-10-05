@@ -21,6 +21,9 @@
 				<input type="password" name="password" id="pas_in" placeholder="пароль" value="">
 				<img src="/img/icons8-%D1%81%D0%BF%D1%80%D1%8F%D1%82%D0%B0%D1%82%D1%8C-25.png" id="ps_in"><br><br>
 				<input type="hidden" name="_csrf" value="<%= csrfToken%>">
+				<div class="agreement">
+          			<p>Я согласен с <a href="/agreement">правилами</a> пользования чата <input type="checkbox" name="iagree" id="iagree"></p>
+        		</div>
 				<button type="submit" name="done_in">Вход</button>
 			</form>
 			<hr>
@@ -45,6 +48,9 @@
 				<span id="pas1"></span>
 				<br><br>
 				<input type="hidden" name="_csrf" value="<%= csrfToken%>">
+				<div class="agreement">
+          			<p>Я согласен с <a href="/agreement">правилами</a> пользования чата <input type="checkbox" name="" id="iagree"></p>
+        		</div>
 				<button type="submit" name="done" id = "done" disabled>Зарегистрироваться</button>
 			</form>
             <%if(mail == 'true' || mail == 'false' || form == 'true'){%>  
@@ -132,9 +138,11 @@
 
     	let checkedPas = (firstPas == secondPas) && check && lengthPas
 
+    	let iagree = $('#iagree').prop('checked')
+
     	let $done = $('#done')
 
-    	if(log && emailExist && checkedPas)	$done.prop('disabled',false)//let user singup
+    	if(log && emailExist && checkedPas && iagree)	$done.prop('disabled',false)//let user singup
     		else $done.prop('disabled',true)
     }
 
