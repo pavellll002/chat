@@ -279,6 +279,7 @@ hr{
 .text_message .span img[data-emojis]{
 	width: 16px;
 	height: 16px;
+	min-height: 1.2em;
 }
 .time{
 	font-size: .8em;
