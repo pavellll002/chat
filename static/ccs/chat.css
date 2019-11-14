@@ -279,7 +279,6 @@ hr{
 .text_message .span img[data-emojis]{
 	width: 16px;
 	height: 16px;
-	min-height: 1.2em;
 }
 .time{
 	font-size: .8em;
@@ -329,6 +328,7 @@ hr{
     border-radius: 5px;
    	position: relative;
     box-shadow: 1px 1px 3px -1px black;
+	min-height: 1.2em;
 }
 .you .text_message{
     background: rgba(189, 223, 239, .36);
