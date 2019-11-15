@@ -2,9 +2,9 @@ try{
 const clean   = require('./clean.js')
 //before starting server we should clean some thins
 
-//clean.files()//delete temp files
+clean.files()//delete temp files
 clean.chaters()//delete chaters from db
-clean.users()
+//clean.users()
 
 //run server
 const env = require('dotenv').config().parsed
