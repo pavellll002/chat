@@ -163,7 +163,7 @@
 
           let checked = $agree.prop('checked')
 
-          Cookies.set('agreement',checked)
+          Cookies.set('agreement',checked,{expires:365})
 
           if(checked == false){
 
