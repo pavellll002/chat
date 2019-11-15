@@ -2,15 +2,16 @@ try{
 const clean   = require('./clean.js')
 //before starting server we should clean some thins
 
-clean.files()//delete temp files
+//clean.files()//delete temp files
 clean.chaters()//delete chaters from db
-//clean.users()
+clean.users()
 
 //run server
 const env = require('dotenv').config().parsed
 const App 		= require('./app')() 
 const Server 	= require('http').Server(App) 
 const Io 		= require('socket.io')(Server)
+const Sp    = require('socket-protect')
 
 const defaultOpts = {
   origin: [],
@@ -28,8 +29,7 @@ const defaultOpts = {
     timeout: 50 // 50 ms
   }
 } 
-
-const Sp 		= require('socket-protect') 
+ 
 const Chat 		= Io.of('/chat') 
 
 Io.use((socket, next) => {
@@ -42,5 +42,14 @@ require('./io').io(Chat, Sp, defaultOpts)
 Server.listen(env.PORT) 
 }
 catch(err){
-  console.log(err)
+
+
+  const log     = reuqire('./mongoose').log
+  //save wrongs
+  let doc = new log({
+    log: err,
+  })
+  doc.save(()=>{})
+
+
 }

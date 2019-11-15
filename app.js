@@ -37,7 +37,8 @@ let fileStoreOptions 	= {}
 	app.use(body.json()) 
 
 	app.use(passport.initialize()) 
-	app.use(passport.session()) 
+	app.use(passport.session())
+	app.use(passport.authenticate('remember-me')) 
 	//auth
 	passportSt(passport)
 

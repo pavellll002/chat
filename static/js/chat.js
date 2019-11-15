@@ -517,6 +517,7 @@ function show_emojis(){
               right:      right,
               width:      width,
               display:    'block',
+              'min-height':'3em',
             }
             ).end().css({
               display: 'block',

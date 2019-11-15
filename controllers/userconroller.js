@@ -72,7 +72,8 @@ userController.register = (req,res,next) => {
 
 userController.logout = (req,res) => {
 
-	req.logout() 
+	req.logout()
+	res.clearCookie('token') 
 	res.redirect('/') 
 } 
 

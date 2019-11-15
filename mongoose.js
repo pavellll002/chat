@@ -61,7 +61,8 @@ const userShema = new Schema({
 	images: 	[{
 		type: 	Schema.Types.ObjectId,
 		ref: 	'image',
-	}]
+	}],
+	autoLoginHash: String,
 })
 
 //set image shema
@@ -72,6 +73,14 @@ const imageShema = new Schema({
 		type: String,
 		unique: true,
 	},
+})
+
+const logShema = new Schema({
+	log: String,
+	date: {
+		type: Date,
+		default: Date.now
+	}
 }) 
 
 
@@ -93,4 +102,5 @@ module.exports = {
 	chaters: 	mongoose.model('chater',chaterShema),
 	user: 		mongoose.model('user',userShema),
 	image: 		mongoose.model('image',imageShema),
+	log: 		mongoose.model('log',logShema)
 } 
