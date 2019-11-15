@@ -139,6 +139,8 @@
 
     	let $done = $('#done')
 
+    	console.log(log,emailExist,checkedPas,iagree)
+
     	if(log && emailExist && checkedPas && iagree)	$done.prop('disabled',false)//let user singup
     		else $done.prop('disabled',true)
     }
