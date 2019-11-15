@@ -12,7 +12,7 @@ module.exports = (passport) =>{
 			username: 	username,
 			active: 	true,
 		},(err,doc) =>{
-
+			console.log(doc)
 			if(err) redirect('')
 
 			if(doc != null)	{
