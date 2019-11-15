@@ -44,7 +44,7 @@ Server.listen(env.PORT)
 catch(err){
 
 
-  const log     = reuqire('./mongoose').log
+  const log     = require('./mongoose').log
   //save wrongs
   let doc = new log({
     log: err,
