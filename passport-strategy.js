@@ -19,21 +19,18 @@ module.exports = (passport) =>{
 			
 				let valid = bcrypt.compareSync(password,doc.password)
 
-				if(valid) next(null,{
+				if(valid) done(null,{
 					username: doc.username,
 					password: doc.password,
-				})/*done(null,{
-					username: doc.username,
-					password: doc.password,
-				})*/
+				})
 					else {
 						console.log('pas is not valid')
-						next(null,false)//done(null,false)
+						done(null,false)
 					}
 			}
 			else{
 				console.log('doc is null')
-				next(null,false)//done(null,false)
+				done(null,false)
 			} 
 		})
 	})) 
