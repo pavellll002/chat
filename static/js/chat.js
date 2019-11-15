@@ -84,7 +84,7 @@
 
   function set_data_users() {
     let data_user = Cookies.get('data_user');
-    let checked_agreement =  Cookies.get('checked')
+    let checked_agreement =  Cookies.get('agreement')
 
     if(data_user == undefined)return false;
 
