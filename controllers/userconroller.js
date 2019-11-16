@@ -175,7 +175,7 @@ userController.chat = (req,res)=>{
 			auth: auth,
 			csrfToken: csrf,
 		} 
-		console.log(req.cookies.token)
+		console.log(req.session)
 			res.render('index',obj) 
 }
 
