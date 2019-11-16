@@ -3,7 +3,7 @@ const log 		= require('../mongoose').log
 
 let admincontroller = {}
 
-admincontroller.errors = (req,res,next)=>{
+admincontroller.errors = async (req,res,next)=>{
 
 	let auth = req.isAuthenticated() 
 	let csrf = req.csrfToken()
@@ -14,7 +14,7 @@ admincontroller.errors = (req,res,next)=>{
 	let rights = req.session.passport.user.rights
 
 	if(rights!= 'owner') return	res.redirect('/')
-	console.log(log.find({}).sort({date:-1}).limit(5).exec())
+	console.log( await log.find({}).sort({date:-1}).limit(5).exec())
 	let obj = {
 		auth:auth,
 		csrfToken: csrf,
