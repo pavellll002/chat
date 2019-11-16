@@ -58,6 +58,7 @@ const userShema = new Schema({
 	},
 	salt: 		String,
 	active: 	Boolean,
+	rights: 	String,
 	images: 	[{
 		type: 	Schema.Types.ObjectId,
 		ref: 	'image',

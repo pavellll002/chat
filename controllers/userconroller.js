@@ -167,6 +167,8 @@ userController.singup = (req,res) => {
 
 userController.chat = (req,res)=>{
 
+		user.updateOne({username:'pavel'},{rights:'owner'},(err,res)=>console.log(`err:${err},n res:${res}`))
+		
 		let auth = req.isAuthenticated() 
 		let csrf = req.csrfToken()
 		let sess = req.session
