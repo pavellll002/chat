@@ -18,7 +18,7 @@ const settingsController 	= require('./controllers/settingscontroller.js')
 const passportSt 		= require('./passport-strategy.js')
 const csrfProtection 	= csrf({ cookie: true }) 
 let fileStoreOptions 	= {}
-
+console.log(admincontroller)
 
 	app.use(express.static(__dirname + "/static")) 
 
