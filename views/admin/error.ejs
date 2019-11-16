@@ -78,7 +78,7 @@
 			</tr>
 			<%logs.forEach(log =>{%>
 				<tr>
-					<td><%=log.date%></td>
+					<td><%=log.date.toLocaleTimeString()%></td>
 					<td><%=log.log%></td>
 				</tr>
 			<%})%>
