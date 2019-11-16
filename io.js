@@ -9,8 +9,8 @@ module.exports.io = function (io,Sp,protectOpts) {
 	io.on('connection',onConnect);
 
 let cleanTempFiles = (person,socketId)=>{
-	console.log(person)
-	if(	!person.chat_io	||	!person.img_path) return false
+
+	if(person == null ||	!person.chat_io	||	!person.img_path) return false
 	let chat_io = person.chat_io
 	let imgPath = person.img_path
 
