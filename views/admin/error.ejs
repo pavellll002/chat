@@ -55,11 +55,19 @@
 		*{
 			margin: 0;
 		}
+		ul{
+			border: 1px solid black;
+		}
 	</style>
 </head>
 <body>
 	<div id="container">
 			<%- include('../layout/header')-%>
+		<ul>
+			<%for(log in logs){%>
+				<li><%=log%></li>
+			<%%>
+		</ul>
 		
 	</div>
 </body>
