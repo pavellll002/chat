@@ -6,9 +6,13 @@ admincontroller.errors = (req,res,next)=>{
 
 	let auth = req.isAuthenticated() 
 	let csrf = req.csrfToken()
+
+	if(!auth)	res.redirect('/')
+
+
 	let rights = req.session.passport.user.rights
 
-	if(!auth && rights!= 'owner')	res.redirect('/')
+	if(rights!= 'owner')	res.redirect('/')
 
 	let obj = {
 		auth:auth,
