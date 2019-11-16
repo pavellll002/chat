@@ -15,6 +15,7 @@ admincontroller.errors = async (req,res,next)=>{
 
 	if(rights!= 'owner') return	res.redirect('/')
 	let logs = await log.find({}).sort({date:-1})/*.limit(5)*/.exec())
+	console.log(logs)
 	let obj = {
 		auth:auth,
 		csrfToken: csrf,
