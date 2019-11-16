@@ -84,7 +84,7 @@ userController.check = (req,res) => {
 		
 	let nick = req.params['nick'] 
 	let salt = req.params['salt'] 
-	console.log(nick,salt)
+
 	user.updateOne(
 		{
 			username:nick,
@@ -107,14 +107,14 @@ userController.isNick = (req,res) => {
 
 	if(auth) res.redirect('/')
 		
-	let nick = req.body.login 
-	console.log(nick)
+	let nick = req.body.login
+
 	user.findOne({
 		username:nick,
 	},
 	(err,doc)=>{
 		if(err) return console.log(err) 
-			console.log(doc)
+
 		if(doc !=null ) res.render('layout/zero',{num:1})//if nick is 
 			else res.render('layout/zero',{num:0})//if nick isn't
 	}) 
@@ -126,7 +126,6 @@ userController.isEmail = (req,res) => {
 	if(auth) res.redirect('/')
 		
 	let email = req.body.email 
-	console.log(email)
 
 	user.findOne({
 		email:email,
