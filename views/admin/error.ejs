@@ -68,6 +68,19 @@
 				<li><%=log%></li>
 			<%})%>
 		</ul>
+
+		<table>
+			<tr>
+				<th>Date</th>
+				<th>Error</th>
+			</tr>
+			<%logs.forEach(log =>{%>
+				<tr>
+					<td>log.date</td>
+					<td>log.log</td>
+				</tr>
+			<%})%>
+		</table>
 		
 	</div>
 </body>
