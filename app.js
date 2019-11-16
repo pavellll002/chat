@@ -13,7 +13,7 @@ const body 				= require('body-parser')
 
 const userController 	= require('./controllers/userconroller.js')
 const chatController 	= require('./controllers/chatcontroller.js') 
-const admincontroller	= reuqire('./controllers/admincontroller.js')
+//const admincontroller	= reuqire('./controllers/admincontroller.js')
 const settingsController 	= require('./controllers/settingscontroller.js') 
 const passportSt 		= require('./passport-strategy.js')
 const csrfProtection 	= csrf({ cookie: true }) 
