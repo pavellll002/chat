@@ -19,7 +19,6 @@ admincontroller.errors = async (req,res,next)=>{
 	let obj = {
 		auth:auth,
 		csrfToken: csrf,
-		logs,
 	}
 
 	res.render('admin/error',obj)
