@@ -15,7 +15,7 @@ admincontroller.errors = (req,res,next)=>{
 		csrfToken: csrf,
 	}
 
-	//res.render('admin/error',obj)
+	res.render('admin/error',obj)
 }
 
 module.exports = admincontroller
