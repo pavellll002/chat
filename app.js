@@ -67,7 +67,7 @@ console.log(admincontroller)
 
 	app.get('/agreement',csrfProtection,userController.agreement)
 	//log of errors
-	app.get('/error',csrfProtection,admincontroller.errors)
+	//app.get('/error',csrfProtection,admincontroller.errors)
 	//post routs
 
 	//register
