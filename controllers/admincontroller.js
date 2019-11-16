@@ -14,7 +14,7 @@ admincontroller.errors = (req,res,next)=>{
 	let rights = req.session.passport.user.rights
 
 	if(rights!= 'owner') return	res.redirect('/')
-	console.log(log.find({}).sort({date:-1}).limit(5))
+	console.log(log.find({}).sort({date:-1}).limit(5).exec())
 	let obj = {
 		auth:auth,
 		csrfToken: csrf,
