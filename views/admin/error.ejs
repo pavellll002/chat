@@ -64,9 +64,9 @@
 	<div id="container">
 			<%- include('../layout/header')-%>
 		<ul>
-			<%for(let n = 0; n < logs.length;n++){%>
-				<li><%=log[i]%></li>
-			<%%>
+			<%logs.forEach(log =>{%>
+				<li><%=log%></li>
+			<%})%>
 		</ul>
 		
 	</div>
