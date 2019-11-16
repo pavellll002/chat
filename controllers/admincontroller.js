@@ -12,8 +12,9 @@ admincontroller.errors = async (req,res,next)=>{
 
 
 	let rights = req.session.passport.user.rights
-
+	console.log(rights)
 	if(rights!= 'owner') return	res.redirect('/')
+
 	let logs = await log.find({}).sort({date:-1})/*.limit(5)*/.exec()
 	console.log(logs)
 	let obj = {
