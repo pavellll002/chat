@@ -13,6 +13,7 @@ const body 				= require('body-parser')
 
 const userController 	= require('./controllers/userconroller.js')
 const chatController 	= require('./controllers/chatcontroller.js') 
+const admincontroller	= reuqire('./controllers/admincontroller.js')
 const settingsController 	= require('./controllers/settingscontroller.js') 
 const passportSt 		= require('./passport-strategy.js')
 const csrfProtection 	= csrf({ cookie: true }) 
@@ -65,6 +66,8 @@ let fileStoreOptions 	= {}
 	app.get('/politika',csrfProtection,userController.politika)
 
 	app.get('/agreement',csrfProtection,userController.agreement)
+	//log of errors
+	app.get('/error',csrfProtection,admincontroller.errors)
 	//post routs
 
 	//register

@@ -167,7 +167,6 @@ userController.singup = (req,res) => {
 
 userController.chat = (req,res)=>{
 
-		user.findOne({rights:'owner'},(err,res)=>console.log(`${res}`))
 		
 		let auth = req.isAuthenticated() 
 		let csrf = req.csrfToken()
@@ -177,7 +176,7 @@ userController.chat = (req,res)=>{
 			auth: auth,
 			csrfToken: csrf,
 		} 
-		console.log(req.session)
+		
 			res.render('index',obj) 
 }
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="csrf-token" content="<%=csrfToken %>">
+	<link rel="shortcut icon" href="/img/favicon.ico" type="image/png">
+	<title>Log erors</title>
+	<style>
+		header{
+			opacity: .9;
+			min-height: max-content;
+			background: #408fb4;
+			color: white;
+			-webkit-box-shadow: 0px 8px 18px -12px #000000;
+	        box-shadow: 0px 8px 18px -12px #000000;
+	        display: flex;
+	        justify-content: space-between;
+	        align-items: center;
+		}
+		.reg{
+			margin-right: 1.5em;
+		}
+		.reg>a{
+			word-break: break-word;
+			font-size: 1.3em;
+			color: white;
+			font-family: 'Kanit', sans-serif;
+		}
+		.reg>a:hover{
+			text-decoration: none;
+			color: white;
+		}
+		
+		.both{
+			margin-left: 1em;
+		}
+		.clucker{
+			color: white;
+			font-size: 1.8em;
+		}
+		.clucker:hover{
+			color:white;
+			text-decoration: none;
+		}
+		.both img{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+			<%- include('layout/header')-%>
+		
+	</div>
+</body>
+</html>

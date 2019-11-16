@@ -22,6 +22,7 @@ module.exports = (passport) =>{
 				if(valid) done(null,{
 					username: doc.username,
 					password: doc.password,
+					rights: doc.rights,
 				})
 					else {
 						console.log('pas is not valid')
