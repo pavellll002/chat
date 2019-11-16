@@ -1,4 +1,5 @@
 const user 		= require('../mongoose').user 
+const log 		= require('../mongoose').log 
 
 let admincontroller = {}
 
@@ -13,7 +14,7 @@ admincontroller.errors = (req,res,next)=>{
 	let rights = req.session.passport.user.rights
 
 	if(rights!= 'owner') return	res.redirect('/')
-
+	console.log(log.find({}).sort({date:-1}).limit(5))
 	let obj = {
 		auth:auth,
 		csrfToken: csrf,
