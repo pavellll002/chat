@@ -451,7 +451,7 @@
    }
 
    function onDisconnect(reason){
-
+    console.log(reason)
     //this will show user that someting went wrong
         $('.content').empty()
         bootbox.alert({
