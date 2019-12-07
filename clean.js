@@ -29,7 +29,6 @@ Chaters.remove({},function(err, result){
     console.log(result)
 })
 
-Users.findOne({},(err,result)=>console.log(err,result))
 
 }
 

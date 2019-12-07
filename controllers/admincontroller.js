@@ -40,7 +40,7 @@ admincontroller.getUsers = async (req,res,next)=>{
 	
 	let page = parseInt(req.query.page,10)
 	let group = 30
-	let users = await user.find({}).sort({images:1}).skip(group*page).limit(group).exec()
+	let users = await user.find({}).sort({images:-1}).skip(group*page).limit(group).exec()
 	let count = await user.count({}).exec()
 	let obj = {}
 	
