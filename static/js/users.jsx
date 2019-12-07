@@ -30,7 +30,7 @@ class Nav extends React.Component{
 		let group = this.state.group;
 		let page  = this.state.page;
 
-		let lastPage = Math.floor(count/group)-1; 
+		let lastPage = count%group == 0?count/group:Math.ceil(count/group); 
 		let prev = (page != 0)?<Link to={"/users/"+(page-1)}>Prev</Link>:'';
 		let next = ((count-(page+1)*group) > 0)?<Link to={"/users/"+(++page)}>Next</Link>:'';
 		return <nav>
