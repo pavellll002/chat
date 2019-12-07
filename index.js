@@ -39,7 +39,7 @@ Io.use((socket, next) => {
 
 require('./io').io(Chat, Sp, defaultOpts) 
 
-Server.listen(env.PORT,()=>{console.log('server started1')}) 
+Server.listen(env.PORT,()=>{console.log('server started')}) 
 }
 catch(err){
 
