@@ -58,13 +58,16 @@
 		ul{
 			border: 1px solid black;
 		}
-		th,td{
-			border: 1px solid black;
-			padding: .3em;
-		}
-		tr:hover{
-			background-color:rgba(64, 143, 180, .2);
-		}
+		
+		table {width: 100%; border-collapse: separate; border-spacing: 4px;}
+		table thead tr {color: #ffffff; font-weight: bold;}
+		table thead tr td {border-radius: 4px 4px 0 0; background: #2e82c3;}
+		table tbody tr td {border: 1px solid #2e82c3; border-radius: 4px; background: #cbdfef;}
+		table tbody tr td:hover {background: #a2c3dd; transition-duration: 0.2s;}
+		a{text-decoration: none; color: #2e82c3; font-size: 1em; font-weight: bold;}
+		nav>a:before{content: '|'}
+		nav>a:after{content: '|'}
+		
 	</style>
 </head>
 <body>
@@ -74,10 +77,10 @@
 		<div id="app"></div>		
 	</div>
 
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
     <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
-    <script type="text/babel" src="users.jsx"></script>
+    <script type="text/babel" src="/js/users.jsx"></script>
 </body>
 </html>
