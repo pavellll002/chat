@@ -45,7 +45,7 @@ admincontroller.getUsers = async (req,res,next)=>{
 	let obj = {}
 	
 	users = JSON.stringify(users)
-	console.log(users)
+
 	obj.users = users
 	obj.count = count
 	obj.group = group

@@ -5,12 +5,32 @@ const Redirect = ReactRouterDOM.Redirect;
 const Link = ReactRouterDOM.Link;
 
 class Nav extends React.Component{
-	render(){
-		let count = this.props.count;
-		let group = this.props.group;
-		let page  = this.props.page;
+	 constructor(props) {
+   		super(props);
+   		this.state = {
+		count : this.props.count,
+		group : this.props.group,
+		page  : this.props.page,
+   		}
+   	}
 
-		let lastPage = Math.floor(count/group); 
+	componentDidUpdate(prevProps, prevState, snapshot){
+		console.log(prevProps, prevState, snapshot);
+		if(prevProps.page != this.state.page){
+			this.setState({
+				count:prevProps.count,
+				group:prevProps.group,
+				page:prevProps.page,
+			})
+		}
+	}
+
+	render(){
+		let count = this.state.count;
+		let group = this.state.group;
+		let page  = this.state.page;
+
+		let lastPage = Math.floor(count/group)-1; 
 		let prev = (page != 0)?<Link to={"/users/"+(page-1)}>Prev</Link>:'';
 		let next = ((count-(page+1)*group) > 0)?<Link to={"/users/"+(++page)}>Next</Link>:'';
 		return <nav>
@@ -32,7 +52,7 @@ class Main extends React.Component{
     	};
   	}
 	componentDidMount(){
-		fetch('/get-users?page='+this.state.page)
+		fetch('/get-users?page='+this.props.match.params.page)
 		.then(response=> response.json())
 		.then((function(json){
 						json.users = JSON.parse(json.users);
@@ -45,8 +65,26 @@ class Main extends React.Component{
 		);
 
 	}
+
+	componentDidUpdate(prevProps, prevState, snapshot){
+		if(prevProps.match.params.page != this.props.match.params.page){	
+			fetch('/get-users?page='+this.props.match.params.page)
+			.then(response=> response.json())
+			.then((function(json){
+							json.users = JSON.parse(json.users);
+							this.setState({ 
+								ok:true,
+								data: json,
+			    				page:this.state.page,
+							});
+						}).bind(this)
+			);		
+		}
+	}
+
 	render(){
 		const page = this.props.match.params.page;
+
 		let usersTable;
 		if(this.state.ok){
 			usersTable = 
@@ -67,11 +105,11 @@ class Main extends React.Component{
 						}
 					</tbody>
 				</table>
-				<Nav count={this.state.data.count} page={this.state.page}  group={this.state.data.group}/>
+				<Nav  count={this.state.data.count} page={this.props.match.params.page}  group={this.state.data.group}/>
 			</div>;
 		}
 		else{
-			usersTable = <h1>Something went wrong</h1>;
+			usersTable = <div>loading...</div>;
 		}
 
 		return usersTable;
