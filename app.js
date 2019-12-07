@@ -2,7 +2,7 @@ const express = require('express')
 const app 	  = express() 
 const jsonParser = express.json() 
 const csrf 	  = require('csurf')
-
+const Ddos	  = require('ddos')
 
 const passport 			= require('passport') 
 const expressSession 	= require('express-session')
@@ -16,7 +16,9 @@ const chatController 	= require('./controllers/chatcontroller.js')
 const admincontroller	= require('./controllers/admincontroller.js')
 const settingsController 	= require('./controllers/settingscontroller.js') 
 const passportSt 		= require('./passport-strategy.js')
+const utilAdmin 		= require('./utils/utiladmin.js')
 const csrfProtection 	= csrf({ cookie: true }) 
+const ddos 				= new Ddos({burst:10, limit:15})
 let fileStoreOptions 	= {}
 
 	app.use(express.static(__dirname + "/static")) 
@@ -31,14 +33,17 @@ let fileStoreOptions 	= {}
     		expires: new Date(Date.now() + 1000*60*60*24*365),
     	}
 	})) 
-	
+	app.use(ddos.express)
 	app.use(cookie()) 
 	app.use(body.urlencoded({ extended: true })) 
 	app.use(body.json()) 
 
 	app.use(passport.initialize()) 
 	app.use(passport.session())
-	app.use(passport.authenticate('remember-me')) 
+	app.use(passport.authenticate('remember-me'))
+	app.use(function(req, res, next) {
+  		res.status(404).send('404');
+	}) 
 	//auth
 	passportSt(passport)
 
@@ -66,7 +71,14 @@ let fileStoreOptions 	= {}
 
 	app.get('/agreement',csrfProtection,userController.agreement)
 	//log of errors
-	app.get('/error',csrfProtection,admincontroller.errors)
+	app.get('/error',csrfProtection,utilAdmin.rights,admincontroller.errors)
+	//page of users
+	app.get('/users/:page',csrfProtection,utilAdmin.rights,admincontroller.pageUsers)
+	//redirect to users
+	app.get('/users',csrfProtection,utilAdmin.rights,admincontroller.redirectPageUsers)
+	//list of users
+	app.get('/get-users',csrfProtection,utilAdmin.rights,admincontroller.getUsers)
+
 	//post routs
 
 	//register

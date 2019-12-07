@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="csrf-token" content="<%=csrfToken %>">
+	<link rel="shortcut icon" href="/img/favicon.ico" type="image/png">
+	<title>Log erors</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Kanit|Oswald');
+		@import url('https://fonts.googleapis.com/css?family=Hind&display=swap');
+		header{
+			opacity: .9;
+			min-height: max-content;
+			background: #408fb4;
+			color: white;
+			-webkit-box-shadow: 0px 8px 18px -12px #000000;
+	        box-shadow: 0px 8px 18px -12px #000000;
+	        display: flex;
+	        justify-content: space-between;
+	        align-items: center;
+	        font-family: 'Hind', sans-serif;
+		}
+		.reg{
+			margin-right: 1.5em;
+		}
+		.reg>a{
+			word-break: break-word;
+			font-size: 1.3em;
+			color: white;
+			font-family: 'Kanit', sans-serif;
+		
+		}
+		.reg>a:hover{
+			text-decoration: none;
+			color: white;
+		}
+		
+		.both{
+			margin-left: 1em;
+		}
+		.clucker{
+			color: white;
+			font-size: 1.8em;
+		}
+		.clucker:hover{
+			color:white;
+			text-decoration: none;
+		}
+		.both img{
+			display: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		*{
+			margin: 0;
+		}
+		ul{
+			border: 1px solid black;
+		}
+		th,td{
+			border: 1px solid black;
+			padding: .3em;
+		}
+		tr:hover{
+			background-color:rgba(64, 143, 180, .2);
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+			<%- include('../layout/header')-%>
+		
+		<div id="app"></div>		
+	</div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
+    <script type="text/babel" src="users.jsx"></script>
+</body>
+</html>
