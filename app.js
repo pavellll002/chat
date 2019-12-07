@@ -41,9 +41,7 @@ let fileStoreOptions 	= {}
 	app.use(passport.initialize()) 
 	app.use(passport.session())
 	app.use(passport.authenticate('remember-me'))
-	app.use(function(req, res, next) {
-  		res.status(404).send('404');
-	}) 
+
 	//auth
 	passportSt(passport)
 
@@ -106,6 +104,10 @@ let fileStoreOptions 	= {}
 
 	//change password
 	app.post('/change-password',csrfProtection,settingsController.changepassword)
+
+	app.use(function(req, res, next) {
+  		res.status(404).send('404')
+	}) 
 	
 module.exports = function() {
 	return app 

@@ -30,7 +30,7 @@ admincontroller.pageUsers = async (req,res,next)=>{
 
 }
 
-admincontroller.redirectPpageUsers = async (req,res,next)=>{
+admincontroller.redirectPageUsers = async (req,res,next)=>{
 
 	res.redirect('/users/0')	
 
