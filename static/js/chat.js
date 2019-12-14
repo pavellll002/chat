@@ -152,8 +152,19 @@
                 ages:ages,
                 agree:agree,
             };
-            Cookies.set( 'data_user', obj, { expires: 365});
-            socket.emit('search',obj);
+            //add  recaptcha
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LcTuscUAAAAANA6oM3cbKrS6ilqNR23Ex5g5r9W', {action: 'homepage'}).then(token=> 
+                {
+                  // pass the token to the backend script for verification
+                  obj.token = token
+                  socket.emit('search',obj)
+                  delete obj.token
+                  Cookies.set( 'data_user', obj, { expires: 365})
+
+                })
+            })
+
           }
       
 
@@ -1023,6 +1034,17 @@ function coockyreload(){
           obj = JSON.parse(obj);
           
           socket.emit('search',obj);
+
+          grecaptcha.ready(function() {
+                grecaptcha.execute('6LcTuscUAAAAANA6oM3cbKrS6ilqNR23Ex5g5r9W', {action: 'homepage'}).then(token=> 
+                {
+                  // pass the token to the backend script for verification
+                  obj.token = token
+                  socket.emit('search',obj)
+                  delete obj.token
+                  Cookies.set( 'data_user', obj, { expires: 365})
+                })
+          })
 
           $el.empty();
 

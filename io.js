@@ -1,7 +1,10 @@
-const Chaters 		=		require('./mongoose').chaters;
-const Crud 			= 		require('./crud');
-const Cd 			= 		require('./checkdata');
-const Fs 			= 		require('fs');
+const Chaters 		=		require('./mongoose').chaters
+const Crud 			= 		require('./crud')
+const Cd 			= 		require('./checkdata')
+const Fs 			= 		require('fs')
+const request		= 		require('request')
+const rp 			= 		require('request-promise')
+const env 			= 		require('dotenv').config().parsed
 
 
 module.exports.io = function (io,Sp,protectOpts) {
@@ -74,10 +77,17 @@ function onConnect(socket) {
 		chater.save(Crud.save);
 
 		//this function will update chater's io and try to find intelocutor
-		socket.on('search',function (data) {
+		socket.on('search',async function (data) {
 			
+			let secret_key = env.RECAPTCHA_SECRET_KEY
+    		let token = data.token
+    		let url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${token}`
+
+    		let ans = await rp(url)
+    		let checkCaptcha = JSON.parse(ans).success
+    		
 			//this thing check data for correctly
-			if(Cd.check_data(data)){
+			if(Cd.check_data(data) && checkCaptcha){
 
 				//all data what I'll use in search of chat
 				let id 		= socket.id;
