@@ -89,6 +89,7 @@ class Main extends React.Component{
 		if(this.state.ok){
 			usersTable = 
 			<div>
+				<div id="counter">Amount of users: {this.state.data.count}</div>
 				<table>
 					<thead>
 						<tr>

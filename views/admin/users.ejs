@@ -4,10 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="csrf-token" content="<%=csrfToken %>">
 	<link rel="shortcut icon" href="/img/favicon.ico" type="image/png">
-	<title>Log erors</title>
+	<title>Users</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Kanit|Oswald');
 		@import url('https://fonts.googleapis.com/css?family=Hind&display=swap');
+		@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+		*{
+			font-family: 'Lato', sans-serif;
+			margin: 0;
+		}
 		header{
 			opacity: .9;
 			min-height: max-content;
@@ -49,14 +54,11 @@
 		.both img{
 			display: none;
 		}
-		a{
-			text-decoration: none;
-		}
-		*{
-			margin: 0;
-		}
 		ul{
 			border: 1px solid black;
+		}
+		#counter,nav{
+			padding: .6em 0;
 		}
 		
 		table {width: 100%; border-collapse: separate; border-spacing: 4px;}
@@ -64,7 +66,14 @@
 		table thead tr td {border-radius: 4px 4px 0 0; background: #2e82c3;}
 		table tbody tr td {border: 1px solid #2e82c3; border-radius: 4px; background: #cbdfef;}
 		table tbody tr td:hover {background: #a2c3dd; transition-duration: 0.2s;}
-		a{text-decoration: none; color: #2e82c3; font-size: 1em; font-weight: bold;}
+
+
+		a{
+			text-decoration: none;
+			color: #2e82c3;
+			font-size: 1em;
+			font-weight: bold;
+		}
 		nav>a:before{content: '|'}
 		nav>a:after{content: '|'}
 		
