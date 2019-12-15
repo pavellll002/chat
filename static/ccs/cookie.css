@@ -14,6 +14,9 @@
 .cookie-notification a{
 	color: white;
 }
+.cookie-notification a:hover{
+	color: white;
+}
 #cookie-ok{
 	margin-left: .5em;
 	cursor: pointer;
