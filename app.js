@@ -68,6 +68,8 @@ let fileStoreOptions 	= {}
 	app.get('/politika',csrfProtection,userController.politika)
 
 	app.get('/agreement',csrfProtection,userController.agreement)
+
+	app.get('/cookie',csrfProtection,userController.cookie)
 	//log of errors
 	app.get('/error',csrfProtection,utilAdmin.rights,admincontroller.errors)
 	//page of users

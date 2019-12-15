@@ -282,7 +282,18 @@ userController.agreement = (req,res)=>{
 	res.render('rules/agreement',obj)
 }
 
+userController.cookie = (req,res)=>{
 
+	let auth = req.isAuthenticated()
+	let csrf = req.csrfToken()
+
+	let obj = {
+		auth: auth,
+		csrfToken:csrf,
+	}
+
+	res.render('rules/cookie',obj)
+}
 
 
 

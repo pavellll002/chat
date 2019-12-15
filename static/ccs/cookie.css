@@ -1,0 +1,23 @@
+.cookie-notification{
+	    display: flex;
+	    justify-content: space-between;
+	    font-size: .6em;
+	    background-color: rgba(50, 62, 83, .7);
+	    font-family: 'Ubuntu', sans-serif;
+	    color: white;
+	    border-radius: .5em;
+	    padding: .7em;
+	    position: fixed;
+	    bottom: .5em;
+	    left: .5em;
+}
+.cookie-notification a{
+	color: white;
+}
+#cookie-ok{
+	margin-left: .5em;
+	cursor: pointer;
+}
+#cookie-ok:hover{
+	text-decoration: underline;
+}
