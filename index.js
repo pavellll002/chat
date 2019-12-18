@@ -32,10 +32,10 @@ const defaultOpts = {
  
 const Chat 		= Io.of('/chat') 
 
-Io.use((socket, next) => {
+/*Io.use((socket, next) => {
   Sp.protectHandshake(Io, socket, defaultOpts) 
   next() 
-}) 
+}) */
 
 require('./io').io(Chat, Sp, defaultOpts) 
 
@@ -43,6 +43,7 @@ Server.listen(env.PORT,()=>{console.log('server started')})
 }
 catch(err){
 
+  console.log(err)
 
   const log     = require('./mongoose').log
   //save wrongs

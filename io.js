@@ -70,7 +70,7 @@ function onConnect(socket) {
 		socket.emit('io',socket.id)
 
 		
-  Sp.protectConnect(socket, protectOpts); 
+  		//Sp.protectConnect(socket, protectOpts); 
 		let chat_id = '';
 		//add cheter's io to the db
 		let chater = new Chaters({io:socket.id});
