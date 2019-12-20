@@ -22,7 +22,7 @@ const SocketAntiSpam  = require('socket-anti-spam')
     //redis:              client,      // Redis client if you are sharing multiple servers
 })*/
 
-Io.origins(['https://clucker.ru'/*,'http://localhost:3000'*/]) 
+Io.origins(['https://clucker.ru']) 
 const Chat 		= Io.of('/chat') 
 
 require('./io').io(Chat) 
