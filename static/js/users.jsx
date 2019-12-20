@@ -84,14 +84,15 @@ class Main extends React.Component{
 
 	render(){
 		const page = this.props.match.params.page;
-		console.log(this.state)
+		console.log(this.state);
+		const unverifiedProcent = Math.floor((this.state.data.countUnverified/this.state.data.count)*100);
 		let usersTable;
 		if(this.state.ok){
 			usersTable = 
 			<div>
 				<div id="counter">
 					<div id="allUsersCount">Amount of users: {this.state.data.count}</div>
-					<div id="unverifiedUsersCount">Amount of unverified users:{this.state.data.countUnverified}({(this.state.data.countUnverified/this.state.data.count)*100}%)</div>
+					<div id="unverifiedUsersCount">Amount of unverified users:{this.state.data.countUnverified}({unverifiedProcent}%)</div>
 				</div>
 				<table>
 					<thead>
