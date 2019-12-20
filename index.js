@@ -10,17 +10,17 @@ clean.chaters()//delete chaters from db
 const env = require('dotenv').config().parsed
 const App 		= require('./app')() 
 const Server 	= require('http').Server(App) 
-const Io 		= require('socket.io')(Server)
+const Io 		= require('socket.io')(Server)/*
 const SocketAntiSpam  = require('socket-anti-spam')
-
-const socketAntiSpam = new SocketAntiSpam({
+*/
+/*const socketAntiSpam = new SocketAntiSpam({
     banTime:            30,         // Ban time in minutes
     kickThreshold:      2,          // User gets kicked after this many spam score
     kickTimesBeforeBan: 1,          // User gets banned after this many kicks
     banning:            true,       // Uses temp IP banning after kickTimesBeforeBan
     io:                 Io,  // Bind the socket.io variable
     //redis:              client,      // Redis client if you are sharing multiple servers
-})
+})*/
 
 Io.origins(['https://clucker.ru'/*,'http://localhost:3000'*/]) 
 const Chat 		= Io.of('/chat') 
