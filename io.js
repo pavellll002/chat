@@ -1,13 +1,28 @@
-const Chaters 		=		require('./mongoose').chaters
-const Crud 			= 		require('./crud')
-const Cd 			= 		require('./checkdata')
-const Fs 			= 		require('fs')
-const request		= 		require('request')
-const rp 			= 		require('request-promise')
-const env 			= 		require('dotenv').config().parsed
+const Chaters 			=		require('./mongoose').chaters
+const Crud 				= 		require('./crud')
+const Cd 				= 		require('./checkdata')
+const Fs 				= 		require('fs')
+const request			= 		require('request')
+const rp 				= 		require('request-promise')
+const env 				= 		require('dotenv').config().parsed
+const { RateLimiterMemory } = require('rate-limiter-flexible')
+
+const rateLimiter = new RateLimiterMemory(
+  {
+    points: 10, // 5 points
+    duration: 1, // per second
+  })
 
 
 module.exports.io = function (io) {
+
+	//middlewares
+  	//check host
+	io.use((socket,next)=>{
+	  let verifiedHosts = ['clucker.ru','localhost:3000']
+	  let host = socket.handshake.headers.host
+	  if(verifiedHosts.includes(host))  next()
+	})
 
 	io.on('connection',onConnect);
 
@@ -293,7 +308,7 @@ function onConnect(socket) {
 			);
 		}
 
-		function onMessage(data) {
+		async function onMessage(data) {
 
 			//remove html from string
 			let str = Cd.escapeHTML(data.trim());
@@ -307,8 +322,16 @@ function onConnect(socket) {
 
 			if(typeof str === 'string' && chat_id != '' && str != ''){
 
-				//send a string intelocutor
-				io.to(chat_id).emit('get message', obj);
+			    try {
+			      	await rateLimiter.consume(socket.handshake.address);
+					//send a string intelocutor
+					io.to(chat_id).emit('get message', obj);
+				} catch(rejRes) {
+						console.log(rejRes)
+				      // no available points to consume
+				      // emit error or warning message
+				      //socket.emit('blocked', { 'retry-ms': rejRes.msBeforeNext });
+				}
 
 			}
 
