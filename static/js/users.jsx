@@ -92,7 +92,7 @@ class Main extends React.Component{
 			<div>
 				<div id="counter">
 					<div id="allUsersCount">Amount of users: {this.state.data.count}</div>
-					<div id="unverifiedUsersCount">Amount of unverified users:{this.state.data.countUnverified}({unverifiedProcent}%)</div>
+					<div id="unverifiedUsersCount">Amount of unverified users:{this.state.data.countUnverified} ( {unverifiedProcent}% )</div>
 				</div>
 				<table>
 					<thead>
