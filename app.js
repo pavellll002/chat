@@ -18,7 +18,7 @@ const settingsController 	= require('./controllers/settingscontroller.js')
 const passportSt 		= require('./passport-strategy.js')
 const utilAdmin 		= require('./utils/utiladmin.js')
 const csrfProtection 	= csrf({ cookie: true }) 
-const ddos 				= new Ddos({burst:10, limit:100, maxcount:10})
+const ddos 				= new Ddos({burst:10, limit:50, maxcount:10})
 let fileStoreOptions 	= {}
 
 	app.use(express.static(__dirname + "/static")) 

@@ -1070,7 +1070,12 @@ function coockyreload(){
         $el_read      = $('.not_you.read');
         let $el_t     = $('title');
 
-        socket.emit('input',{});
+        let lastMillis = Cookies.get('lastMillis')
+        if(lastMillis || lastMillis - Date.now() > 1)
+        {
+              socket.emit('input',{});
+              Cookies.set('lastMillis',Date.now())
+        }
         socket.emit('read',{});
 
         $el_read.removeClass('read');

@@ -7,7 +7,7 @@ const rp 			= 		require('request-promise')
 const env 			= 		require('dotenv').config().parsed
 
 
-module.exports.io = function (io,Sp,protectOpts) {
+module.exports.io = function (io) {
 
 	io.on('connection',onConnect);
 
@@ -66,11 +66,8 @@ let cleanTempFiles = (person,socketId)=>{
 }
 function onConnect(socket) { 
 		
-
 		socket.emit('io',socket.id)
-
-		
-  		//Sp.protectConnect(socket, protectOpts); 
+		 
 		let chat_id = '';
 		//add cheter's io to the db
 		let chater = new Chaters({io:socket.id});
