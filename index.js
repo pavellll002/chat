@@ -22,9 +22,13 @@ const SocketAntiSpam  = require('socket-anti-spam')
     //redis:              client,      // Redis client if you are sharing multiple servers
 })*/
 
-Io.origins(['https://clucker.ru']) 
 const Chat 		= Io.of('/chat') 
-
+Io.use((socket,next)=>{
+  let verifiedHosts = ['clucker.ru']
+  let host = socket.handshake.headers.host
+  let cofirm = verifiedHosts.filter(el=> el == host)
+  if(!(confirm.length > 0)) socket.close()
+})
 require('./io').io(Chat) 
 
 Server.listen(env.PORT,()=>{console.log('server started')}) 
