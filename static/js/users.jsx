@@ -84,23 +84,26 @@ class Main extends React.Component{
 
 	render(){
 		const page = this.props.match.params.page;
-
+		console.log(this.state)
 		let usersTable;
 		if(this.state.ok){
 			usersTable = 
 			<div>
-				<div id="counter">Amount of users: {this.state.data.count}</div>
+				<div id="counter">
+					<div id="allUsersCount">Amount of users: {this.state.data.count}</div>
+					<div id="unverifiedUsersCount">Amount of unverified users:{this.state.data.countUnverified}({Math.floor(this.state.data.countUnverified/this.state.data.count)*100}%)</div>
+				</div>
 				<table>
 					<thead>
 						<tr>
-							<td>username</td><td>email</td><td>rights</td><td>collectioin</td><td>button show collectioin</td>
+							<td>username</td><td>email</td><td>rights</td><td>collectioin</td><td>active</td><td>button show collectioin</td>
 						</tr>
 					</thead>
 					<tbody>
 						{
 								this.state.data.users.map(function(el){
 									return <tr>
-											<td>{el.username}</td><td>{el.email}</td><td>{el.rights}</td><td>{el.images.length}</td><td>show</td>
+											<td>{el.username}</td><td>{el.email}</td><td>{el.rights}</td><td>{el.images.length}</td><td>{el.active?'true':'false'}</td><td>show</td>
 										</tr>;								
 								})
 						}

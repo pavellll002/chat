@@ -42,6 +42,7 @@ admincontroller.getUsers = async (req,res,next)=>{
 	let group = 30
 	let users = await user.find({}).sort({images:-1}).skip(group*page).limit(group).exec()
 	let count = await user.count({}).exec()
+	let countUnverified = await user.count({active:false}).exec()
 	let obj = {}
 	
 	users = JSON.stringify(users)
@@ -49,6 +50,7 @@ admincontroller.getUsers = async (req,res,next)=>{
 	obj.users = users
 	obj.count = count
 	obj.group = group
+	obj.countUnverified = countUnverified
 
 	res.send(obj)
 

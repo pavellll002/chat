@@ -19,7 +19,7 @@ module.exports.io = function (io) {
 	//middlewares
   	//check host
 	io.use((socket,next)=>{
-	  let verifiedHosts = ['clucker.ru','localhost:3000']
+	  let verifiedHosts = ['clucker.ru'/*,'localhost:3000'*/]
 	  let host = socket.handshake.headers.host
 	  if(verifiedHosts.includes(host))  next()
 	})
