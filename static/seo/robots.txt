@@ -1,0 +1,2 @@
+Allow: /
+Disallow: /politika /agreement /cookie
